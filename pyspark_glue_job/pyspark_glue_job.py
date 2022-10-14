@@ -9,4 +9,5 @@ sc = SparkContext.getOrCreate()
 glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
+print('abcd')
 job.commit()
