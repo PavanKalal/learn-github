@@ -1,0 +1,35 @@
+{
+  "name" : "pyspark_glue_job",
+  "description" : "",
+  "role" : "arn:aws:iam::259524530896:role/AWS_glue_role",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-259524530896-us-east-1/scripts/pyspark_glue_job.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--encryption-type" : "sse-s3",
+    "--enable-job-insights" : "false",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-259524530896-us-east-1/temporary/",
+    "--enable-glue-datacatalog" : "true",
+    "library-set" : "analytics"
+  },
+  "maxRetries" : 3,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "3.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "learn-github",
+    "branch" : "AWS_glue_files",
+    "folder" : "pyspark_glue_job"
+  }
+}
