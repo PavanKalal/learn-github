@@ -10,4 +10,5 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 print('abcd')
+print('efgh')
 job.commit()
